@@ -4,6 +4,7 @@
 
 import data from "./data";
 import { useState } from 'react';
+import "./styles.css"
 
 export default function Accordian(){
     const [selected,setSelected]=useState(null);
@@ -18,7 +19,7 @@ export default function Accordian(){
     }
 
     function handleMultiClick(currentID){
-        let cpyMulti = [...multiple];
+        let cpyMulti = [...multiple];   // ...spread operator
         const findindexof = cpyMulti.indexOf(currentID)
         if(findindexof === -1){ cpyMulti.push(currentID)}
         else{
@@ -32,7 +33,7 @@ export default function Accordian(){
 
     return (
     <div className="wrapper">
-    <button onClick={()=> setEnableMultiselect(!enablemultiselect)} >Enable MultiSelection</button>
+    <button className="btn" onClick={()=> setEnableMultiselect(!enablemultiselect)} >Enable MultiSelection</button>
     <div className="accordian">
     {/* Whenever we need to write javascript we write it inside {} braces only*/}
         {
