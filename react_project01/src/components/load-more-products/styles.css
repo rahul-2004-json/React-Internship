@@ -1,0 +1,22 @@
+.load-more-container{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.product-container{
+    display: grid;
+    /* here 4 indicates the number of times pattern should be repeated and 1fr is fraction unit */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.product{
+    padding: 20px;
+    border: 1px solid;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
