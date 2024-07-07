@@ -1,0 +1,46 @@
+/* Setting some variables for whole root class that will be used later */
+:root{
+    --background: #ffffff;
+    --text-primary: #000;
+    --button-tag: #000;
+    --button-text : #ffffff;
+}
+
+
+/* Using data-theme property that was assigned to change the variable values */
+[data-theme = "dark"]{
+    --background: #000;
+    --text-primary: #fff;
+    --button-tag: #fff;
+    --button-text : #000;
+}
+
+.light-dark-mode{
+    background-color: var(--background);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+    font-size: 20px;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.container p{
+    color: var(--text-primary);
+    font-size: 30px;
+}
+
+.container button{
+    background: var(--button-tag);
+    color: var(--button-text);
+    padding: 15px;
+    font-size: 15px;
+    border-radius: 50px;
+    outline: none;
+    font-weight: 600;
+}
