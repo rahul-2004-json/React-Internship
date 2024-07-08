@@ -1,5 +1,6 @@
 //Always ask the interviewer whether the url will be same or recieved from parent component
 import { useEffect, useState } from "react";
+import "./styles.css";
 
 export default function ScrollIndicator({ url }) {
   const [data, setData] = useState([]);
@@ -22,7 +23,24 @@ export default function ScrollIndicator({ url }) {
     }
   }
 
-  function handleScrollPercentage() {}
+  //This function calculates the percentage scrolled
+  function handleScrollPercentage() {
+    console.log(
+      document.body.scrollTop,
+      document.documentElement.scrollTop,
+      document.documentElement.scrollHeight,
+      document.documentElement.clientHeight
+    );
+
+    const howMuchScrolled =
+      document.documentElement.scrollTop || document.body.scrollTop;
+
+    const height =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+
+    setScrollPercentage((howMuchScrolled / height) * 100);
+  }
 
   useEffect(() => {
     fetchData(url);
@@ -37,10 +55,18 @@ export default function ScrollIndicator({ url }) {
     };
   }, []);
 
-  console.log(data);
+  console.log(data, scrollPercentage);
   return (
     <div>
-      <h1>Scroll Indicator</h1>
+      <div className="top-container">
+        <h1>Scroll Indicator</h1>
+        <div className="current-progress-container">
+          <div
+            className="progress-bar"
+            style={{ width: `${scrollPercentage}%` }}
+          ></div>
+        </div>
+      </div>
       <div className="data-container">
         {data && data.length > 0
           ? data.map((dataItem) => <p key={dataItem.id}>{dataItem.title}</p>)
