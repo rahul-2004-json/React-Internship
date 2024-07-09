@@ -32,9 +32,12 @@ export default function ScrollIndicator({ url }) {
       document.documentElement.clientHeight
     );
 
+    //This value represents how far down the page has been scrolled from the top
     const howMuchScrolled =
       document.documentElement.scrollTop || document.body.scrollTop;
 
+    /*his gives the total height of the page that can be scrolled, 
+    which is the full height of the document minus the height of the viewport.*/
     const height =
       document.documentElement.scrollHeight -
       document.documentElement.clientHeight;
@@ -63,6 +66,7 @@ export default function ScrollIndicator({ url }) {
         <div className="current-progress-container">
           <div
             className="progress-bar"
+            // setting the width of progress bar according to scrollpercentage
             style={{ width: `${scrollPercentage}%` }}
           ></div>
         </div>
