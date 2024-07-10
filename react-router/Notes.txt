@@ -1,0 +1,20 @@
+React Router DOM Notes
+
+//There are certain features that comes with react router dom and those are 
+
+Link : It is used in place of a tags , as a tags refresh the whole page  , Link is used to avoid page refresh
+Purpose: Link is used to navigate to different routes in your application.
+Usage: It is typically used when you just need to navigate to a new page without any additional behavior.
+Features: It renders an anchor (<a>) tag under the hood and simply changes the URL without refreshing the page.
+<Link to="/about">Go to About Page</Link>
+
+NavLink : NavLink is an extension of Link with additional features for styling and indicating the active state.
+Usage: It is commonly used for navigation menus where you want to highlight the currently active link.
+
+
+
+/ Important Feature /
+loader property: If we want to fecth data from api or database , then we can directly call it from where we define routes in main.jsx file
+for eg: It fetches data even before use effect as , when we move our cursor to a link , 
+it starts fetching the data and keeps it in a cache memory and when we click on the link it provides us the data instantly from cached memory
+
