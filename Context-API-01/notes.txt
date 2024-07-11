@@ -1,0 +1,16 @@
+In this Tutorial we created a context folder
+1.Created a UserContext file and created a gloabal variable UserContext inside it and exported it.
+
+2.Then we created a UserContextprovider file in which childrens are passed as props to it. 
+These childrens are nothing but components that we will be providing within UserContextProvider
+
+3.We created a state inside the userContextProvider file and passed it in form of values in UserContextProvider
+
+4.The above passed functions, variables inside the userContextProvider will be accessible in any component.
+
+5.Then we imported the UserContextProvider inside the app file and wahtever component we will pass within it, 
+will have access to every variable or functions made inside context
+
+6.To use the data or function present in context inside any component we will simply call the hook useContext and get value or function from it.
+
+
