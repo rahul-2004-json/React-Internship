@@ -14,6 +14,21 @@ thead {
     background-color: #f2f2f2;
 }
 
+.table-head{
+  display: flex;
+  gap: 5px;
+}
+
+.up-btn{
+  display: block;
+}
+
+
+.down-btn{
+  display: block;
+}
+
+
 .search-bar-container{
   position: relative;
   display: flex;
@@ -32,13 +47,13 @@ thead {
 
 .search-icon{
     position: absolute;
-    top: 10%;
+    top: 18%;
     right: 45%;
 }
 
 .cross-icon{
     position: absolute;
-    top: 10%;
+    top: 18%;
     right: 45%;
 }
 
@@ -51,6 +66,7 @@ thead {
     margin-left: 5px;
     padding: 10px;
 }
+
 
 .sent-reject {
   background: url("../public/images/cancel_icon.svg");

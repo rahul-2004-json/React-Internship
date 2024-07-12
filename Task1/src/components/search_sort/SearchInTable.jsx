@@ -8,18 +8,7 @@ import "./styles.css";
 function SearchInTable() {
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredData, setfilteredData] = useState(data);
-  const [checkedbox, setCheckedbox] = useState(false);
   const [sortOrder, setSortOrder] = useState("Ascending");
-
-  const handleCheckBox = () => {
-    checkedbox ? setCheckedbox(false) : setCheckedbox(true);
-  };
-
-  const handleSortbtn = () => {
-    sortOrder === "Ascending"
-      ? setSortOrder("Descending")
-      : setSortOrder("Ascending");
-  };
 
   const handleChangeInSearch = (value) => {
     setSearchQuery(value);
@@ -52,14 +41,8 @@ function SearchInTable() {
           searchValue={searchQuery}
           onSearchBoxChange={handleChangeInSearch}
         />
-        <SortComponent
-          sortOrder={sortOrder}
-          handleSortbtn={handleSortbtn}
-          checkedbox={checkedbox}
-          handleCheckBox={handleCheckBox}
-        />
       </div>
-      <Table data={filteredData} order={sortOrder} checkbox={checkedbox} />
+      <Table data={filteredData} sendfilteredData={setfilteredData} />
     </div>
   );
 }
