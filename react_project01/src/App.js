@@ -10,6 +10,8 @@ import menus from "./components/tree-view-recursive-menu/data";
 import QrCodeGenerator from "./components/qr-code-generator";
 import LightDarkMode from "./components/Light-to-Dark";
 import ScrollIndicator from "./components/scroll_indicator";
+import TabsParent from "./components/custom-tabs/TabsParent";
+import ParentPopup from "./components/modal-popup/ParentPopup";
 
 function App() {
   return (
@@ -39,7 +41,13 @@ function App() {
       {/* <LightDarkMode /> */}
 
       {/* Scroll Indicator */}
-      <ScrollIndicator url={"https://dummyjson.com/products?limit=100"} />
+      {/* <ScrollIndicator url={"https://dummyjson.com/products?limit=100"} /> */}
+
+      {/* Custom-Tabs */}
+      {/* <TabsParent /> */}
+
+      {/* Custom PopUp */}
+      <ParentPopup />
     </div>
   );
 }
