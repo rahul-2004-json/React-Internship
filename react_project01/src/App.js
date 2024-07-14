@@ -12,6 +12,8 @@ import LightDarkMode from "./components/Light-to-Dark";
 import ScrollIndicator from "./components/scroll_indicator";
 import TabsParent from "./components/custom-tabs/TabsParent";
 import ParentPopup from "./components/modal-popup/ParentPopup";
+import SearchBar from "./components/github-profile-finder/SearchBar";
+import SearchAutocomplete from "./components/search-autocomplete-with-api";
 
 function App() {
   return (
@@ -47,7 +49,13 @@ function App() {
       {/* <TabsParent /> */}
 
       {/* Custom PopUp */}
-      <ParentPopup />
+      {/* <ParentPopup /> */}
+
+      {/* Github profile finder */}
+      {/* <SearchBar /> */}
+
+      {/* Search Autocomplete */}
+      <SearchAutocomplete />
     </div>
   );
 }
