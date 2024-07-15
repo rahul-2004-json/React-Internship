@@ -4,226 +4,75 @@ import { FaArrowDown } from "react-icons/fa";
 
 export default function Table({ data }) {
   const [sortedData, setSortedData] = useState([]);
-  const [order, setOrder] = useState("Ascending");
-  const [orderArray, setOrderArray] = useState([]);
+  const [order, setOrder] = useState(null); // 'Ascending' or 'Descending'
+  const [showUpButton, setShowUpButton] = useState(true);
+  const [showDownButton, setShowDownButton] = useState(true);
 
   useEffect(() => {
     setSortedData(data);
   }, [data]);
 
-  const sorting = (col) => {
-    if (order === "Ascending") {
-      const sorted = [...sortedData].sort((a, b) => (a[col] > b[col] ? 1 : -1));
-      setSortedData(sorted);
-    }
-    if (order === "Descending") {
-      const sorted = [...sortedData].sort((a, b) => (a[col] < b[col] ? 1 : -1));
-      setSortedData(sorted);
+  const sorting = (col, order) => {
+    const sorted = [...sortedData].sort((a, b) =>
+      order === "Ascending"
+        ? a[col] > b[col]
+          ? 1
+          : -1
+        : a[col] < b[col]
+        ? 1
+        : -1
+    );
+    setSortedData(sorted);
+  };
+
+  const handleUpBtnClick = (col) => {
+    setOrder("Ascending");
+    sorting(col, "Ascending");
+    setShowUpButton(false);
+    if (!showDownButton) {
+      setShowUpButton(true);
+      setShowDownButton(true);
     }
   };
 
-  const handleIncreasebtn = (e) => {
-    if (order === "Descending") {
-      setOrder("Ascending");
+  const handleDownBtnClick = (col) => {
+    setOrder("Descending");
+    sorting(col, "Descending");
+    setShowDownButton(false);
+    if (!showUpButton) {
+      setShowUpButton(true);
+      setShowDownButton(true);
     }
-
-    setOrderArray((prevOrderarray) => {
-      if (!prevOrderarray.includes("Ascending") && prevOrderarray.length < 2) {
-        return [...prevOrderarray, "Ascending"];
-      } else if (orderArray.length === 2) {
-        return ["Ascending"];
-      } else {
-        return prevOrderarray;
-      }
-    });
-
-    const upbtns = document.querySelectorAll(".up-btn");
-    upbtns.forEach((button) => {
-      button.style.display = "none";
-    });
   };
-
-  const handleDecreasebtn = (e) => {
-    if (order === "Ascending") {
-      setOrder("Descending");
-    }
-
-    setOrderArray((prevOrderarray) => {
-      if (!prevOrderarray.includes("Descending") && prevOrderarray.length < 2) {
-        return [...prevOrderarray, "Descending"];
-      } else if (orderArray.length === 2) {
-        return ["Descending"];
-      } else {
-        return prevOrderarray;
-      }
-    });
-
-    const downbtns = document.querySelectorAll(".down-btn");
-    downbtns.forEach((button) => {
-      button.style.display = "none";
-    });
-  };
-
-  // useEffect(() => {
-  //   if (orderArray.length === 2) {
-  //     setOrderArray([]);
-  //   }
-  // }, [orderArray, setOrderArray]);
-
-  console.log(orderArray);
 
   return (
     <div>
       <table>
         <thead>
           <tr>
-            <th>
-              <div className="table-head">
-                Email
-                {orderArray.length === 2 && (
-                  <>
+            {["email", "restaurant_id", "device_type"].map((col) => (
+              <th key={col}>
+                <div className="table-head">
+                  {col.replace("_", " ")}
+                  {showUpButton && (
                     <button
                       className="up-btn"
-                      onClick={(e) => {
-                        handleIncreasebtn(e);
-                        sorting("email");
-                      }}
+                      onClick={() => handleUpBtnClick(col)}
                     >
                       <FaArrowUp />
                     </button>
+                  )}
+                  {showDownButton && (
                     <button
                       className="down-btn"
-                      onClick={(e) => {
-                        handleDecreasebtn(e);
-                        sorting("email");
-                      }}
+                      onClick={() => handleDownBtnClick(col)}
                     >
                       <FaArrowDown />
                     </button>
-                  </>
-                )}
-                {orderArray.length < 2 && (
-                  <>
-                    <button
-                      className="up-btn"
-                      onClick={(e) => {
-                        handleIncreasebtn(e);
-                        sorting("email");
-                      }}
-                    >
-                      <FaArrowUp />
-                    </button>
-                    <button
-                      className="down-btn"
-                      onClick={(e) => {
-                        handleDecreasebtn(e);
-                        sorting("email");
-                      }}
-                    >
-                      <FaArrowDown />
-                    </button>
-                  </>
-                )}
-              </div>
-            </th>
-            <th>
-              <div className="table-head">
-                Restaurant_Id
-                {orderArray.length === 2 && (
-                  <>
-                    <button
-                      className="up-btn"
-                      onClick={(e) => {
-                        handleIncreasebtn(e);
-                        sorting("restaurant_id");
-                      }}
-                    >
-                      <FaArrowUp />
-                    </button>
-                    <button
-                      className="down-btn"
-                      onClick={(e) => {
-                        handleDecreasebtn(e);
-                        sorting("restaurant_id");
-                      }}
-                    >
-                      <FaArrowDown />
-                    </button>
-                  </>
-                )}
-                {orderArray.length < 2 && (
-                  <>
-                    <button
-                      className="up-btn"
-                      onClick={(e) => {
-                        handleIncreasebtn(e);
-                        sorting("restaurant_id");
-                      }}
-                    >
-                      <FaArrowUp />
-                    </button>
-                    <button
-                      className="down-btn"
-                      onClick={(e) => {
-                        handleDecreasebtn(e);
-                        sorting("restaurant_id");
-                      }}
-                    >
-                      <FaArrowDown />
-                    </button>
-                  </>
-                )}
-              </div>
-            </th>
-            <th>
-              <div className="table-head">
-                Device Type
-                {orderArray.length === 2 && (
-                  <>
-                    <button
-                      className="up-btn"
-                      onClick={(e) => {
-                        handleIncreasebtn(e);
-                        sorting("device_type");
-                      }}
-                    >
-                      <FaArrowUp />
-                    </button>
-                    <button
-                      className="down-btn"
-                      onClick={(e) => {
-                        handleDecreasebtn(e);
-                        sorting("device_type");
-                      }}
-                    >
-                      <FaArrowDown />
-                    </button>
-                  </>
-                )}
-                {orderArray.length < 2 && (
-                  <>
-                    <button
-                      className="up-btn"
-                      onClick={(e) => {
-                        handleIncreasebtn(e);
-                        sorting("device_type");
-                      }}
-                    >
-                      <FaArrowUp />
-                    </button>
-                    <button
-                      className="down-btn"
-                      onClick={(e) => {
-                        handleDecreasebtn(e);
-                        sorting("device_type");
-                      }}
-                    >
-                      <FaArrowDown />
-                    </button>
-                  </>
-                )}
-              </div>
-            </th>
+                  )}
+                </div>
+              </th>
+            ))}
             <th>Sent-On</th>
             <th>Status</th>
           </tr>
@@ -244,7 +93,9 @@ export default function Table({ data }) {
               </tr>
             ))
           ) : (
-            <h1>Oops! No Data</h1>
+            <tr>
+              <td colSpan="5">Oops! No Data</td>
+            </tr>
           )}
         </tbody>
       </table>

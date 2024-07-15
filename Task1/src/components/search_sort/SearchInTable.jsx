@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import data from "../../services/apiService";
 import SearchBar from "./SearchBar";
 import Table from "./Table";
-import SortComponent from "./SortComponent";
 import "./styles.css";
 
 function SearchInTable() {
