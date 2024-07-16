@@ -1,0 +1,42 @@
+.card-box{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    min-width: 95vw;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title-and-icons{
+    display: flex;
+    align-items: center;
+    gap: 90vw;
+}
+
+.title-icons{
+    display: flex;
+    gap: 10px;
+}
+
+.title-container hr {
+    border: 0.5px solid #000; 
+    min-width: 97vw;
+}
+
+
+.close-status{
+    color: #25d519;
+    font-weight: 600;
+}
+  
+.Open-status{
+    color: #0088fe;
+    font-weight: 600;
+}
+  
+.InProgress-status{
+    color: #ff8042;
+    font-weight: 600;
+}

@@ -1,0 +1,24 @@
+.description-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.day-status{
+    display: flex;
+    gap:8px
+}
+
+.close-status{
+    color: #25d519;
+    font-weight: 600;
+}
+  
+.Open-status{
+    color: #0088fe;
+    font-weight: 600;
+}
+  
+.InProgress-status{
+    color: #ff8042;
+    font-weight: 600;
+}

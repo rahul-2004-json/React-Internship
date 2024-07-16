@@ -1,0 +1,26 @@
+.card-container{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.service-now{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.view-details{
+    font-size: 16px;
+    color:rgb(9, 164, 220);
+}
+
+.card-heading{
+    display: flex;
+    align-items: center;
+    gap: 225px;
+}

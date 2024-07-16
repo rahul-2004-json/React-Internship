@@ -1,0 +1,17 @@
+.search-bar{
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+  
+.search-icon{
+      position: absolute;
+      top: 18%;
+      right: 45%;
+}
+  
+.cross-icon{
+      position: absolute;
+      top: 18%;
+      right: 45%;
+}
