@@ -1,0 +1,48 @@
+.navbar-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 15px;
+}
+
+.title-logo{
+    text-decoration: none;  
+    font-size: 30px;
+    font-weight:bold;
+}
+
+.title-logo:hover{
+    color: rgba(0, 255, 255, 0.821);
+}
+
+.input-field{
+   padding: 8px 12px;
+   border: 2px solid #007BFF;
+   border-radius: 20px;
+   font-size: 16px;
+   color: #333;
+   background-color: #fff;
+   margin-right: 10px;
+}
+
+.input-field:focus {
+    outline: none; 
+    border-color: #0056b3; 
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); 
+}
+
+.navlink-container{
+    display: flex;
+    gap: 10px;
+    margin-right: 20px;
+}
+
+.navbar-links{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.navbar-links:hover{
+    color: rgba(0, 255, 255, 0.821);
+}

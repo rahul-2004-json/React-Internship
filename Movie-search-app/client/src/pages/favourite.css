@@ -1,0 +1,13 @@
+.favourite-list-container{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 20px;
+    margin-left: 140px;
+}
+
+.handler-text{
+    font-weight: 700;
+    font-size: 30px;
+}
