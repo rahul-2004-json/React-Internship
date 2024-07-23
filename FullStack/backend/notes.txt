@@ -1,0 +1,1 @@
+To use import statements in files we will have to change the type to module in package.json
