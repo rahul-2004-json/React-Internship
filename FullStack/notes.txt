@@ -1,0 +1,6 @@
+CORS(Cross Origin Resource Sharing) issue can be resolved using proxies in frontend or CORS package in backend
+
+
+//Production related knowledge
+It is a bad practice to create a build of frontend and serve it as static folder inside the backend because any changes
+inside the frontend will not be updated.

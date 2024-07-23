@@ -1,0 +1,30 @@
+In redux toolkit we have only four functionalities and that are 
+1.Store
+2.Reducers
+3.useSelector : It is used get data from the store. //useSelector is just a method in which we have access to state and using that state we can get values inside the initial states.
+4.useDispatch : It uses reducers to change values inside a store.
+
+In redux also we will have to use provider to wrap the whole app in order for it to access the values stored inside a store.
+
+
+
+
+Notes:
+React-redux and redux are two different things
+Redux is a core library and React-redux is like a link between react and redux.
+
+
+Steps of implementing Redux in application
+1.We create a store and for each application there is a single store (which is single source of truth).
+2.Inside a store values are always updated using reducers and store should be aware of all the reducers.
+3.Create a slice which is also called a feature because inside it we define ceratin methods that we will use to update our store   (see todoSlice.js file for numbered steps) 
+4.Once store is created we use useDispatch to change values inside the store . useDispatch itself also takes a reducer to update the store.
+5.To get values from the store we use useSelector that has access to state in store and with the help of callback function we can access any value inside it.
+
+
+
+
+
+Difference between Context API and Redux Toolkit 
+-Inside context api state is not preserved and we have to make a copy of state and then do changes on it.
+-but inside redux state is always preserved everything is handled automatically by redux toolkit.
