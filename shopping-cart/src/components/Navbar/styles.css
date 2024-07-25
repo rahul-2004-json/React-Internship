@@ -1,0 +1,14 @@
+.navbar-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 10px;
+}
+
+.navbar-title{
+}
+
+.navbar-links{
+    display: flex;
+    gap: 10px;
+}
